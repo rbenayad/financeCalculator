@@ -113,6 +113,7 @@ switch (financePrompt) {
         rorn(FV, PV, r);
         break;
     case 'annuity':
+    var PVoFV = prompt("Is it an annuity of a PV or FV?");
         switch (PVoFV) {
             case 'PV':
                 var PV = prompt("What is your present value?");
