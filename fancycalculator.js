@@ -37,7 +37,7 @@ $("document").ready(function(){
 			$("#pval,#fval,#rate").show();
 		}
 	})
-	$("#pval,#fval,#nyears").change(function(e){
+	$("#pval,#fval,#rate,#nyears").change(function(e){
 		financeCallbacks[financeOption]();
 	})
 })
