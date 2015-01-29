@@ -6,7 +6,15 @@ var financeCallbacks = {
 		var nyears = parseFloat($("#nyears").val());
 		var res = ((Math.pow((fval / pval), (1 / nyears)) - 1) * 100).toFixed(4) 
 		console.log(res);
-		$("#answer").text(res);
+		$("#answer").text(res + "%");
+	},
+	rorn: function(){
+		var pval = parseFloat($("#pval").val());
+		var fval = parseFloat($("#fval").val());
+		var rate = parseFloat($("#rate").val());
+		var res = ((Math.log(fval / pval)) / (Math.log(1 + rate))).toFixed(3) 
+		console.log(res);
+		$("#answer").text(res + " years");
 	}
 
 }
