@@ -41,9 +41,9 @@ var rorn = function (FV, PV, r) {
 
 
 var financePrompt = prompt("What would you like to find, the PV, FV, ir, rorn, annuity?");
-var lora = prompt("Is it of a lump sum, annuity, annuity due more frequent*, or continuous*? (*=only apples to FV)");
-var PVoFV = prompt("Is it an annuity of a PV or FV?");
-
+if(financePrompt !== "annuity"){
+    var lora = prompt("Is it of a lump sum, annuity, annuity due more frequent*, or continuous*? (*=only apples to FV)");
+}
 switch (financePrompt) {
     case 'PV':
         switch (lora) {
@@ -113,7 +113,7 @@ switch (financePrompt) {
         rorn(FV, PV, r);
         break;
     case 'annuity':
-    var PVoFV = prompt("Is it an annuity of a PV or FV?");
+        var PVoFV = prompt("Is it an annuity of a PV or FV?");
         switch (PVoFV) {
             case 'PV':
                 var PV = prompt("What is your present value?");
