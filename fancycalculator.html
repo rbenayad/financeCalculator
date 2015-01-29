@@ -4,7 +4,7 @@
 </head>
 <body>
 <!-- PV, FV, ir, rorn, annuity? -->
-<div id="financeTypeContainer">
+<div class="basic">
 What would you like to find:
 <select id="financeType">
 <option>PV</option>
@@ -14,7 +14,7 @@ What would you like to find:
 <option>annuity</option>
 </select>
 </div>
-<div id="loraContainer">
+<div class="lora">
 Prompt here:
 <select id="lora">
 <option>lump sum</option>
@@ -23,7 +23,7 @@ Prompt here:
 <option>continuous</option>
 </select>
 </div>
-<div id="PVoFVContainer">
+<div class="PVoFV">
 Is the annuity PV or FV:
 <select id="PVoFV">
 <option>PV</option>
@@ -31,12 +31,12 @@ Is the annuity PV or FV:
 </select>	
 </div>
 
-<div><input id="pval" type="text" placeholder="present value"></input></div>
-<div><input id="fval" type="text" placeholder="future value"></input></div>
-<div><input id="annuity" type="text" placeholder="annuity value"></input></div>
-<div><input id="rate" type="text" placeholder="rate"></input></div>
-<div><input id="nyears" type="text" placeholder="number of years"></input></div>
-<div><input id="myears" type="text" placeholder="times per years"></input></div>
-
+<div><input id="pval" class="param" type="text" placeholder="present value"></input></div>
+<div><input id="fval" class="param" type="text" placeholder="future value"></input></div>
+<div><input id="annuity" class="param" type="text" placeholder="annuity value"></input></div>
+<div><input id="rate" class="param" type="text" placeholder="rate"></input></div>
+<div><input id="nyears" class="param" type="text" placeholder="number of years"></input></div>
+<div><input id="myears" class="param" type="text" placeholder="times per years"></input></div>
+<div id="answer">answer here</div>
 
 </body>

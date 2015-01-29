@@ -1,19 +1,22 @@
 $("document").ready(function(){
-	$("input,div").hide();
-	$("#financeTypeContainer").show();
+	$(".lora,.PVoFV,.param").hide();
+	$(".basic").show();
 	$("#financeType").change(function(e){
 		var v = $("#financeType").val();
-		console.log(v);
 		if(v === "PV" || v === "FV"){
-			$("#loraContainer").show();
-			$("#PVoFVContainer").hide();
+			$(".lora").show();
+			$(".PVoFV").hide();
 		}
 		else {
-			$("#loraContainer").hide();
-			$("#PVoFVContainer").hide();
+			$(".lora").hide();
+			$(".PVoFV").hide();
 			if(v == "annuity"){
-				$("#PVoFVContainer").show();
+				$(".PVoFV").show();
 			}
+		}
+
+		if(v == "ir"){
+			$("#pval,#fval,#nyears").show();
 		}
 	})
 })
