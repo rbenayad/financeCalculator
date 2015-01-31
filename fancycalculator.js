@@ -20,22 +20,58 @@ var financeCallbacks = { //start ofthe financeCallbacks object
 }
 
 $("document").ready(function(){ //when DOM is fully loaded
-	$(".lora,.PVoFV,.param").hide();
+	$(".lora,.PVoFV,.param").hide(); // hides all classes except basic
 	$(".basic").show();
 	$("#financeType").change(function(e){ //e can be any variable name
 		var v = $("#financeType").val();
-		if(v === "PV" || v === "FV"){ //
-			$(".lora").show();
-			$(".PVoFV").hide();
+		if(v === "PV" || v === "FV"){ //condition for if v is PV or FV
+			$(".lora").show(); //show the lora class
+			$(".PVoFV").hide(); //hide the PVoFV class
+			$("#loraprompt").change(function(e){
+				financeOption = v;
+				var g = $("#loraprompt").val();
+				if (v === "PV") {
+					if (g === "lump sum") {
+						$(".param").hide();
+						$("#fval,#rate,#nyears").show();
+					}
+					else if (g === "annuity") {
+						$(".param").hide();
+						$("#annuity,#rate,#nyears").show();
+					}
+					else if (g === "annuity due"){
+						$(".param").hide();
+						$("#annuity,#rate,#nyears").show();
+					}
+				}
+				else {
+					if (g === "lump sum") {
+						$(".param").hide();
+						$("#pval,#rate,#nyears").show();
+					}
+					else if (g === "annuity") {
+						$(".param").hide();
+						$("#annuity,#rate,#nyears").show();
+					}
+					else if (g === "frequent annuity") {}; {
+						$(".param").hide();
+						$("#pval,#rate,#nyears,#myears").show();
+					}
+					else if (g === "continuous") {
+						$(".param").hide();
+						$("#pval,#rate,#nyears").show();
+					}
+			})
+			
 		}
 		else {
-			$(".lora").hide();
-			$(".PVoFV").hide();
-			if(v == "annuity"){
-				$(".PVoFV").show();
+			$(".lora").hide(); //show the lora class
+			$(".PVoFV").hide(); //hide the PVoFV class
+			if(v == "annuity"){ //if financeType is chosen to be an annuity
+				$(".PVoFV").show(); //shows PVoFV class
 			}
 		}
-		financeOption = v;
+		financeOption = v; //what does this do?
 		if(v == "ir"){
 			$(".param").hide();
 			$("#pval,#fval,#nyears").show();
