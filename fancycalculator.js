@@ -28,7 +28,7 @@ var financeCallbacks = { //start ofthe financeCallbacks object
 		var annuity = parseFloat($("#annuity").val());
 		var rate = parseFloat($("#rate").val());
 		var nyears = parseFloat($("#nyears").val());
-		var res = (((1 / rate) - (1 / (Math.pow((1 + rate), nyears) * r))) * annuity).toFixed(2) //equation for interest rate
+		var res = (((1 / rate) - (1 / (Math.pow((1 + rate), nyears) * rate))) * annuity).toFixed(2) //equation for interest rate
 		console.log(res);
 		$("#answer").text(res + " dollars");
 	},
