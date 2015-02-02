@@ -15,7 +15,7 @@ var financeCallbacks = { //start ofthe financeCallbacks object
 		var res = ((Math.log(fval / pval)) / (Math.log(1 + rate))).toFixed(3) //equation for interest rate
 		console.log(res);
 		$("#answer").text(res + " years");
-	}
+	},
 	PVLS: function(){
 		var fval = parseFloat($("#fval").val());
 		var rate = parseFloat($("#rate").val());
@@ -23,7 +23,7 @@ var financeCallbacks = { //start ofthe financeCallbacks object
 		var res = (fval / (Math.pow((1 + rate), nyears))).toFixed(2) //equation for interest rate
 		console.log(res);
 		$("#answer").text(res + " dollars");
-	}
+	},
 	PVA: function(){
 		var annuity = parseFloat($("#annuity").val());
 		var rate = parseFloat($("#rate").val());
@@ -31,7 +31,7 @@ var financeCallbacks = { //start ofthe financeCallbacks object
 		var res = (((1 / rate) - (1 / (Math.pow((1 + rate), nyears) * r))) * annuity).toFixed(2) //equation for interest rate
 		console.log(res);
 		$("#answer").text(res + " dollars");
-	}
+	},
 	PVAD: function(){
 		var annuity = parseFloat($("#annuity").val());
 		var rate = parseFloat($("#rate").val());
@@ -39,7 +39,7 @@ var financeCallbacks = { //start ofthe financeCallbacks object
 		var res = ((((1 / rate) - (1 / (Math.pow((1 + rate), nyears) * rate))) * annuity) * (1 + r)).toFixed(2) //equation for interest rate
 		console.log(res);
 		$("#answer").text(res + " dollars");
-	}
+	},
 	FVLS: function(){
 		var pval = parseFloat($("#pval").val());
 		var rate = parseFloat($("#rate").val());
@@ -47,7 +47,7 @@ var financeCallbacks = { //start ofthe financeCallbacks object
 		var res = (pval * (Math.pow((1 + rate), nyears))).toFixed(2) //equation for interest rate
 		console.log(res);
 		$("#answer").text(res + " dollars");
-	}
+	},
 	FVA: function(){
 		var annuity = parseFloat($("#annuity").val());
 		var rate = parseFloat($("#rate").val());
@@ -55,7 +55,7 @@ var financeCallbacks = { //start ofthe financeCallbacks object
 		var res = (annuity * (((Math.pow((1 + rate), nyears)) - 1) / rate)).toFixed(2) //equation for interest rate
 		console.log(res);
 		$("#answer").text(res + " dollars");
-	}
+	},
 	FVF: function(){
 		var pval = parseFloat($("#pval").val());
 		var rate = parseFloat($("#rate").val());
@@ -64,7 +64,7 @@ var financeCallbacks = { //start ofthe financeCallbacks object
 		var res = (pval * (Math.pow((1 + (rate / myears)), (myears * nyears)))).toFixed(2) //equation for interest rate
 		console.log(res);
 		$("#answer").text(res + " dollars");
-	}
+	},
 	FVC: function(){
 		var pval = parseFloat($("#pval").val());
 		var rate = parseFloat($("#rate").val());
@@ -72,7 +72,7 @@ var financeCallbacks = { //start ofthe financeCallbacks object
 		var res = (pval * (Math.pow(Math.E, (rate * nyears)))).toFixed(2) //equation for interest rate
 		console.log(res);
 		$("#answer").text(res + " dollars");
-	}
+	},
 	APV: function(){
 		var pval = parseFloat($("#pval").val());
 		var rate = parseFloat($("#rate").val());
@@ -80,7 +80,7 @@ var financeCallbacks = { //start ofthe financeCallbacks object
 		var res = (((1 / rate) - (1 / (Math.pow((1 + rate), nyears) * rate))) / pval).toFixed(2) //equation for interest rate
 		console.log(res);
 		$("#answer").text(res + " dollars");
-	}
+	},
 	AFV: function(){
 		var fval = parseFloat($("#fval").val());
 		var rate = parseFloat($("#rate").val());
@@ -88,7 +88,7 @@ var financeCallbacks = { //start ofthe financeCallbacks object
 		var res = ((((Math.pow((1 + rate), nyears)) - 1) / rate) / fval).toFixed(2) //equation for interest rate
 		console.log(res);
 		$("#answer").text(res + " dollars");
-	}
+	},
 }
 
 $("document").ready(function(){ //when DOM is fully loaded
@@ -129,18 +129,18 @@ $("document").ready(function(){ //when DOM is fully loaded
 						$("#annuity,#rate,#nyears").show();
 						financeOption= "FVA";
 					}
-					else if (g === "frequent annuity") {}; {
+					else if (g === "frequent annuity") {
 						$(".param").hide();
 						$("#pval,#rate,#nyears,#myears").show();
 						financeOption= "FVF";
 					}
-					else if (g === "continuous") {
+					else {
 						$(".param").hide();
 						$("#pval,#rate,#nyears").show();
 						financeOption= "FVC";
 					}
+				}
 			})
-			
 		}
 		else if (v == "annuity") {
 			$(".lora").hide(); //show the lora class
@@ -156,8 +156,8 @@ $("document").ready(function(){ //when DOM is fully loaded
 					$(".param").hide();
 					$("#fval,#rate,#nyears").show();
 					financeOption= "AFV";
-					}
 				}
+				
 			})
 		}
 		else if(v == "ir"){
@@ -165,7 +165,7 @@ $("document").ready(function(){ //when DOM is fully loaded
 			$("#pval,#fval,#nyears").show();
 			financeOption= "ir";
 		}
-		else if(v == "rorn"){
+		else {
 			$(".param").hide();
 			$("#pval,#fval,#rate").show();
 			financeOption= "rorn";
