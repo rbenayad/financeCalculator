@@ -8,6 +8,7 @@ def plot_points(x,y):
 def plot_line(x,y):
 	plt.plot(x,y,'b-');
 
+
 def set_axes(xa,ya):
 	plt.ylabel(ya);
 	plt.xlabel(xa);
