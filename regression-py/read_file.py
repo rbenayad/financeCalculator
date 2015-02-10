@@ -7,6 +7,8 @@ def read_file(name, ftype):
 		delim = ","
 	elif(ftype == "tab"):
 		delim = "	"
+    elif (ftype== "semicolon"):
+        delim = ";"
 	else:
 		delim = " "
 
