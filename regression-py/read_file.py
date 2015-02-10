@@ -4,13 +4,13 @@ def read_file(name, ftype):
 	fhandle = open(name, "r")
 
 	if(ftype == "comma"):
-		delim = ","
+	    delim = ","
 	elif(ftype == "tab"):
-		delim = "	"
-    elif (ftype== "semicolon"):
-        delim = ";"
+	    delim = "	"
+	elif (ftype== "semicolon"):
+	    delim = ";"
 	else:
-		delim = " "
+	    delim = " "
 
 	x = []
 	y = []
