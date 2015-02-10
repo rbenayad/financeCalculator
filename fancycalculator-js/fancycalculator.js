@@ -77,7 +77,7 @@ var financeCallbacks = { //start ofthe financeCallbacks object
 		var pval = parseFloat($("#pval").val());
 		var rate = parseFloat($("#rate").val());
 		var nyears = parseFloat($("#nyears").val());
-		var res = (((1 / rate) - (1 / (Math.pow((1 + rate), nyears) * rate))) / pval).toFixed(2) //equation for interest rate
+		var res = (pval/((1 / rate) - (1 / (Math.pow((1 + rate), nyears) * rate)))).toFixed(2) //equation for interest rate
 		console.log(res);
 		$("#answer").text(res + " dollars");
 	},
@@ -85,7 +85,7 @@ var financeCallbacks = { //start ofthe financeCallbacks object
 		var fval = parseFloat($("#fval").val());
 		var rate = parseFloat($("#rate").val());
 		var nyears = parseFloat($("#nyears").val());
-		var res = ((((Math.pow((1 + rate), nyears)) - 1) / rate) / fval).toFixed(2) //equation for interest rate
+		var res = (fval/(((Math.pow((1 + rate), nyears)) - 1) / rate)).toFixed(2) //equation for interest rate
 		console.log(res);
 		$("#answer").text(res + " dollars");
 	},
@@ -99,7 +99,7 @@ $("document").ready(function(){ //when DOM is fully loaded
 		if(v === "PV" || v === "FV"){ //condition for if v is PV or FV
 			$(".lora").show(); //show the lora class
 			$(".PVoFV").hide(); //hide the PVoFV class
-			$("#loraprompt").change(function(e){
+			$("#loraprompt").change(function(e){ //changes the prompt value through the div in the HTML
 				var g = $("#loraprompt").val();
 				if (v === "PV") {
 					if (g === "lump sum") {

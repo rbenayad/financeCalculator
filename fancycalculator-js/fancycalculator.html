@@ -1,5 +1,6 @@
 <head>
 <script src="jquery-1.11.2.min.js"></script>
+<script src="d3.min.js"></script>
 <script src="fancycalculator.js"></script>
 </head>
 <body>
@@ -15,7 +16,7 @@ What would you like to find:
 </select>
 </div>
 <div class="lora">
-Prompt here:
+What kind:
 <select id="loraprompt">
 <option>lump sum</option>
 <option>annuity</option>
@@ -32,12 +33,12 @@ Is the annuity PV or FV:
 </select>	
 </div>
 
-<div><input id="pval" class="param" type="text" placeholder="present value"></input></div>
-<div><input id="fval" class="param" type="text" placeholder="future value"></input></div>
-<div><input id="annuity" class="param" type="text" placeholder="annuity value"></input></div>
-<div><input id="rate" class="param" type="text" placeholder="rate"></input></div>
-<div><input id="nyears" class="param" type="text" placeholder="number of years"></input></div>
-<div><input id="myears" class="param" type="text" placeholder="times per years"></input></div>
+<div><input id="pval" class="param" type="text" placeholder="Present Value"></input></div>
+<div><input id="fval" class="param" type="text" placeholder="Future Value"></input></div>
+<div><input id="annuity" class="param" type="text" placeholder="Annuity Value"></input></div>
+<div><input id="rate" class="param" type="text" placeholder="Rate"></input></div>
+<div><input id="nyears" class="param" type="text" placeholder="Number of Years"></input></div>
+<div><input id="myears" class="param" type="text" placeholder="Times per Year"></input></div>
 <div id="answer">answer here</div>
 
 </body>
